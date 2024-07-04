@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    width: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    background: #0f0f1f;
+}
+
+.display {
+    background: #1a1a2e;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 24px;
+    text-align: right;
+    border-bottom: 1px solid #444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.input {
+    font-size: 1.2em;
+}
+
+.result {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    background: linear-gradient(145deg, #33334d, #282841);
+    color: #ddd;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(145deg, #3b3b5e, #323253);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    background: linear-gradient(145deg, #2b2b4a, #26264a);
+    transform: scale(0.98);
+}
+
+button.clear,
+button.all-clear {
+    background: linear-gradient(145deg, #ff4d4d, #ff1a1a);
+    color: white;
+}
+
+button.clear:hover,
+button.all-clear:hover {
+    background: linear-gradient(145deg, #ff3333, #ff0000);
+}
+
+button.clear:active,
+button.all-clear:active {
+    background: linear-gradient(145deg, #e60000, #b30000);
+}
+
+button.operator {
+    background: linear-gradient(145deg, #4a4a87, #383866);
+    color: white;
+}
+
+button.operator:hover {
+    background: linear-gradient(145deg, #5959a1, #474783);
+}
+
+button.operator:active {
+    background: linear-gradient(145deg, #33336b, #2b2b59);
+}
+
+button:nth-child(1) {
+    grid-column: span 2;
+}
