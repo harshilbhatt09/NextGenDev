@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.about .projects {
+  scroll-behavior: smooth;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Sections */
+.section {
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+}
+
+/* Containers */
+.content-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  clip: rect(auto, auto, auto, auto);
+  pointer-events: none;
+}
+
+.content-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  padding: 0;
+  z-index: 99;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  pointer-events: all;
+}
+
+.content-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* Aesthetics */
+.top-section {
+  background: #000225
+}
+
+.bottom-section {
+  background: #d4fef2;
+}
+
+.section h1 {
+  font-size: 200px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section p,
+.section a {
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content-theme-dark h1 {
+  color: #FFFFFF;
+  text-shadow: 0 20px 40px rgba(255, 255, 255, 0.5);
+}
+
+.content-theme-dark p,
+.content-theme-dark a {
+  color: #c3c1c1;
+}
+
+.content-theme-light h1 {
+  color: #062930;
+  text-shadow: 0 20px 40px rgba(0, 0, 0, .5);
+}
+
+.content-theme-light p,
+.content-theme-light a {
+  color: #728E93;
+}
+
+
+.scroller {
+  max-width: 60%;
+  margin: auto;
+}
+
+.scroller__inner {
+  padding-block: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  background: #979acf28;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem #282a5e;
+}
